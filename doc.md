@@ -61,3 +61,40 @@ including aystems, componets, and integration involve in the application's work 
    - ```test.describe ``` - to declare a group of test
    - ```test.beforEach``` and ```test.afterEach``` which are excuted before/after each test
    - ```test.beforeAll``` and ```test.afterAll``` are executed once per worker before and after all tests.
+
+
+
+## Global fixture
+
+  - Test fixures are used to establish enviroment for each test, giving the test everything it needs and
+    nothing else.
+  - test fixture are isolated between tests. With fixture you can group test based on the their meaning.
+    Insted of their common setup.
+
+**Built in fixures**
+   - ```page``` -> Isolated page for this test run.
+
+   - ```context```-> Isolated context for this test run. The Page fixture belongs to this context as well.
+
+   - ```browser``` -> Browsers are shared across tests to optimize resource.
+
+   - ```browserName```-> The name of browser currently running the test. ex: chromium , firefox, webkit.
+
+   - ```request``` -> Isolated APIRequstContext instance for this test run.
+
+
+**Locators**
+  - If id is present 
+     css -> tagname#id or #id
+
+  - If class attribute is present
+    css -> tagname.class  or .class
+
+  - Write css based on any attribute 
+    css -> [attribute='value']    
+
+  - Write css with traversing from Parent to child
+    css -> parenttagname >> childtagnmae
+
+  -If needs to write the locator based on the text
+   text="" 
